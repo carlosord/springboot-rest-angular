@@ -1,0 +1,39 @@
+
+<table class="table table-striped text-center">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Dni</th>
+      <th scope="col">Name</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Has Car</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of people | async">
+      <th scope="row">{{person.dni}}</th>
+      <td>{{person.name}}</td>
+      <td>{{person.lastname}}</td>
+      <td>{{person.birthday}}</td>
+      <td>
+        <!--
+          <span class="fas" th:classappend="${#strings.equals(p.gender,'FEMALE')} ? fa-female : fa-male"></span>
+        -->
+      </td>
+      <td>
+        <!--
+          <span class="fas" th:classappend="${p.hascar} ? fa-check : fa-times"></span>
+        -->
+      </td>
+      <td>
+        <a href="#" class="fas fa-edit"></a>
+      </td>
+      <td>
+        <a href="#" class="far fa-trash-alt"></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
