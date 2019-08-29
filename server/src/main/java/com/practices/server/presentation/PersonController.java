@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -54,7 +55,7 @@ public class PersonController {
 	 * @return the string
 	 */
 	@PostMapping(Url.API_PEOPLE_NEW)
-	public ResponseEntity<PersonDto> addNewPerson(PersonDto person) {
+	public ResponseEntity<PersonDto> addNewPerson(@RequestBody PersonDto person) {
 		
 		try {
 			
@@ -78,7 +79,7 @@ public class PersonController {
 	 * @return the string
 	 */
 	@PutMapping(Url.API_PEOPLE_EDIT)
-	public ResponseEntity<PersonDto> updatePerson(PersonDto person) {
+	public ResponseEntity<PersonDto> updatePerson(@RequestBody PersonDto person) {
 
 		try {
 			

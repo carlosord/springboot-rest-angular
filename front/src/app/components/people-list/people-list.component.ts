@@ -18,7 +18,8 @@ export class PeopleListComponent implements OnInit {
     this.reloadData();
   }
  
-  reloadData() {
+  reloadData(event?: Event) {
+    if (event) console.log(event);
     this.people = this.peopleService.getPeopleList();
   }
 

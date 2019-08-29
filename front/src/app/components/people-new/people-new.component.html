@@ -1,0 +1,59 @@
+<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">New Person</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New Person</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="post" (ngSubmit)="onSubmit()" #userForm="ngForm">
+            <div class="modal-body"> 
+            
+              <div class="form-group">
+                  <label for="dni">DNI/NIF</label>
+                  <input type="text" class="form-control" id="dni" name="dni" [(ngModel)]="personForm.dni"
+                    placeholder="00000000A" required="required" pattern="[0-9]{8}([a-z]|[A-Z]){1}">
+                </div>
+            
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" [(ngModel)]="personForm.name"
+                    placeholder="Name" required="required" minlength="3" maxlength="15" >
+                </div>
+            
+                <div class="form-group">
+                  <label for="lastname">Lastname</label>
+                  <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="personForm.lastname"
+                    placeholder="Lastname" required="required" minlength="3" maxlength="15" >
+                </div>
+            
+                <div class="form-group">
+                  <label for="birthday">Born day</label>
+                  <input type="text" class="form-control" id="birthday" name="birthday" [(ngModel)]="personForm.birthday"
+                    placeholder="00/00/0000" required="required" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}/" >
+                </div>
+            
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <select class="form-control" id="gender" name="gender" [(ngModel)]="personForm.gender" required="required">
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                  </select>
+                </div>
+            
+                <div class="form-group">
+                  <input type="checkbox" id="hascar" name="hascar" [(ngModel)]="personForm.hascar">
+                  <label for="hascar">Has car</label>
+                </div>
+  
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Save person</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
